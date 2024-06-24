@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Domowa Biblioteka</h1>
+
+
+        <a href="{{ url_for('routes.add_author') }}" class="btn">Dodaj Autora</a>
+        <a href="{{ url_for('routes.add_book') }}" class="btn">Dodaj Książkę</a>
+        <a href="{{ url_for('routes.list_loans') }}" class="btn">Wypożycz</a>
+        <a href="{{ url_for('routes.list_returns') }}" class="btn">Zwrot</a>
+        
+        <h2><a href="{{ url_for('routes.list_books') }}">Książki</a></h2>
+        <ul class="list-group">
+            {% for book in books %}
+            <li class="list-group-item">
+                <strong>{{ book.title }}</strong> (Autor: {{ book.author }})
+            </li>
+            {% endfor %}
+        </ul>
+        
+        <h2><a href="{{ url_for('routes.list_authors') }}">Autorzy</a></h2>
+        <ul class="list-group">
+            {% for author in authors %}
+            <li class="list-group-item">
+                <strong>{{ author.name }}</strong> (Data urodzenia: {{ author.birth_date }}, Narodowość: {{ author.nationality }})
+            </li>
+            {% endfor %}
+        </ul>
+        
+        <h2>Wypożyczenia</h2>
+        <ul class="list-group">
+            {% for loan in loans %}
+            <li class="list-group-item">
+                <strong>{{ loan.book.title }}</strong> (Wypożyczone przez: {{ loan.borrower_name }})
+            </li>
+            {% endfor %}
+        </ul>
+        
+        <h2>Zwroty</h2>
+        <ul class="list-group">
+            {% for return in returns %}
+            <li class="list-group-item">
+                <strong>{{ return.loan.book.title }}</strong> (Zwrócone w dniu: {{ return.return_date }}, Kara: {{ return.fine }} PLN)
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

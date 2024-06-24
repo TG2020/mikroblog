@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Wypożyczenia Książek</h1>
+        
+        <ul class="list-group">
+            {% for loan in loans %}
+            <li class="list-group-item">
+                <strong>{{ loan.book.title }}</strong><br>
+                Wypożyczone przez: {{ loan.borrower_name }}<br>
+                Data wypożyczenia: {{ loan.loan_date }}<br>
+                Termin zwrotu: {{ loan.due_date }}
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('routes.index') }}" class="btn">Biblioteka</a>
+    </div>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

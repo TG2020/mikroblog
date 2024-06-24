@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dodaj Książkę</h1>
+        
+        <form action="/add_book" method="post" class="form-group">
+            <label for="title">Tytuł:</label>
+            <input type="text" id="title" name="title" class="form-control">
+            
+            <label for="author">Autor:</label>
+            <input type="text" id="author" name="author" class="form-control">
+            
+            <label for="year">Rok wydania:</label>
+            <input type="text" id="year" name="year" class="form-control">
+            
+            <label for="genre">Gatunek:</label>
+            <input type="text" id="genre" name="genre" class="form-control">
+            
+            <label for="description">Opis:</label>
+            <textarea id="description" name="description" class="form-control"></textarea>
+            
+            <button type="submit" class="btn">Dodaj Książkę</button>
+        </form>
+    </div>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dodaj Autora</h1>
+        <!-- Formularz dodawania autora -->
+        <form action="/add_author" method="post" class="form-group">
+            <label for="name">Imię i Nazwisko:</label>
+            <input type="text" id="name" name="name" class="form-control">
+            <label for="birth_date">Data urodzenia:</label>
+            <input type="text" id="birth_date" name="birth_date" class="form-control">
+            <label for="nationality">Narodowość:</label>
+            <input type="text" id="nationality" name="nationality" class="form-control">
+            <button type="submit" class="btn">Dodaj Autora</button>
+        </form>
+    </div>
+</body>
+</html>
