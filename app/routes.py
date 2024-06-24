@@ -67,24 +67,6 @@ def update():
     return render_template("update.html")
 
 
-@app.route('/find_book', methods=['POST'])
-def update2():
-    id = request.form.get("id")
-    b = Book.query.filter(Book.id == id).first()
-    title = b.title
-    authorName = b.authors.all()[0].name
-    authorSurname = b.authors.all()[0].surname
-    if len(Book.query.filter(Book.title == title).first().authors.all()) > 1:
-        authorName2 = b.authors.all()[1].name
-        authorSurname2 = b.authors.all()[1].surname
-    else:
-        authorName2 = ""
-        authorSurname2 = ""
-
-    return render_template('update.html', id=id, title=title, authorName=authorName, authorName2=authorName2,
-                           authorSurname=authorSurname, authorSurname2=authorSurname2, available=b.is_available)
-
-
 @app.route("/update", methods=['POST'])
 def update_post():
     id = request.form.get('id')
