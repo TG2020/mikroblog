@@ -103,8 +103,6 @@ def update_post():
         db.session.add(a2)
     db.session.commit()
     return redirect('/')
-#
-# routes_blueprint = Blueprint('routes', _name_)
 
 @app.route('/')
 def index():
@@ -149,7 +147,7 @@ def add_author():
         author = Author(name=name, birth_date=birth_date, nationality=nationality)
         db.session.add(author)
         db.session.commit()
-        return redirect(url_for('routes.list_authors'))
+        return redirect(url_for('list_authors'))
     return render_template('add_author.html')
 
 @app.route('/loans')
